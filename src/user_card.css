@@ -1,0 +1,55 @@
+.card {
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem lightgrey;
+    margin: 1rem;
+    padding: 1rem;
+    border: transparent 0.1rem solid;
+
+    transition: border 0.20s ease-in;
+
+}
+
+.card:hover {
+    border: lightgrey solid 0.1rem;
+}
+
+.user-id {
+    color: lightgrey;
+    font-weight: bold;
+}
+
+.user-login {
+    font-size: 2rem;
+    color: dimgrey;
+
+}
+
+.detail {
+    align-self: flex-end;
+}
+
+.detail-button {
+    color: dimgrey;
+    background: lightgrey;
+    border: 0.1px solid lightgrey;
+    border-radius: 1rem;
+    transition: color 0.1s ease-out;
+}
+
+.detail-button:hover{
+    color: white;
+}
+
+/*Small Display */
+@media (max-width: 480px){
+    .detail {
+        display: block;
+        width: 100%;
+    }
+    .detail-button{
+        display:block;
+        width:100%;
+    }
+}
