@@ -3,3 +3,16 @@ body {
     margin: auto;
     max-width: 720px;
 }
+
+
+.card {
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem lightgrey;
+    margin: 1rem;
+    padding: 1rem;
+    border: transparent 0.1rem solid;
+    transition: border 0.20s ease-in;
+}
+

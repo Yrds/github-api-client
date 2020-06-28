@@ -1,0 +1,9 @@
+.card .repo-name {
+}
+
+.card .repo-id {
+}
+
+.card .repo-url:link {
+    color: grey;
+}
