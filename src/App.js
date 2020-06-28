@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, withRouter } from 'react-router-dom';
+import { Switch, Route} from 'react-router-dom';
 import ListUsers from './ListUsers';
 import UserDetails from './UserDetails';
 
@@ -12,7 +12,6 @@ class App extends Component {
         this.state = {users: []};
     }
 
-
     render(){
         return (
             <div>
@@ -23,7 +22,6 @@ class App extends Component {
             </div>
         );
     }
-
 }
 
 export default App;

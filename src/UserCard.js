@@ -8,13 +8,21 @@ class UserCard extends Component {
         this.user = props.user;
     }
     render(){
-        return <div className = {'card'}>
-            <div className = {'user-id'}>{this.user.id}</div>
-            <div className = {'user-login'}>{this.user.login}</div>
-            <div className = {'detail'}>
-                <button className = {'detail-button'}>
-                    <Link to = {this.user.login + '/details'} className = {'detail-button'}>Details</Link>
-                </button>
+        return <div className = {'card box-hover user-card'}>
+            <div className = {'vertical-line'}></div>
+            <div className = {'card-content'}>
+                <div className = {'vertical-line'}></div>
+                <div className = {'flex-group'}>
+                    <div className = {'user-login'}>{this.user.login}</div>
+                    <div className = {'detail'}>
+                        <Link to = {this.user.login + '/details'}>
+                            <button className = {'detail-button'}>
+                                Details
+                            </button>
+                        </Link>
+                    </div>
+                </div>
+                <div className = {'user-id'}>ID: {this.user.id}</div>
             </div>
         </div>
     }

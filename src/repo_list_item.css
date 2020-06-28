@@ -1,9 +1,27 @@
 .card .repo-name {
+    font-size: larger;
 }
 
 .card .repo-id {
+    color: dimgrey;
 }
 
-.card .repo-url:link {
-    color: grey;
+.card .repo-url{
+    font-size: medium;
+    margin-top: 0.5rem;
 }
+
+.card .repo-url :link{
+    color: #1477e7;
+    text-decoration: none;
+}
+
+.card .repo-url :hover {
+    color: #0366d6;
+}
+
+
+.repo-list-item h3{
+    margin-bottom:0;
+}
+

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import UserCard from './UserCard';
 
 class ListUsers extends Component {
@@ -11,7 +10,10 @@ class ListUsers extends Component {
             nextPage : 0
         }
         this.fetchUsers = this.fetchUsers.bind(this);
+        this.nextPage = this.nextPage.bind(this);
+        this.firstPage = this.firstPage.bind(this);
     }
+
 
     getNextPage(link){
         if(link){
@@ -20,11 +22,21 @@ class ListUsers extends Component {
         else return 0;
     }
 
-    fetchUsers(){
-        fetch('http://localhost:3000/users' + (this.state.nextPage ? "?since=" + this.state.nextPage : '' ))
+    nextPage(){
+        this.fetchUsers(this.state.nextPage);
+    }
+
+    firstPage(){
+        this.fetchUsers(0);
+    }
+
+    fetchUsers(page = 0){
+        fetch('http://localhost:3000/users' + (page ? "?since=" + page : '' ))
             .then(res => res.json())
-            .then(data => { this.setState(
-                {users: data.response, nextPage: this.getNextPage(data.headers.link)})
+            .then(data => {
+                this.setState(
+                    {users: data.response, nextPage: this.getNextPage(data.headers.link)}
+                )
             })
             .catch(console.log);
     }
@@ -37,13 +49,25 @@ class ListUsers extends Component {
         return(
             <div>
                 <h1 style = {
-                    {fontWeight: "lighter"}
+                    {
+                        fontWeight: "lighter",
+                        textAlign: 'center',
+                        marginTop: '3rem',
+                        fontColor: '#24292e'
+                    }
                 }>
                     GitHub Users</h1>
+                <div className = {'button-group'}>
+                    <button onClick={this.firstPage}>First</button>
+                    <button onClick={this.nextPage}>Next</button>
+                </div>
                 <div>
                     {this.state.users.map(user => <UserCard key = {user.login} user = {user}/>)}
                 </div>
-                <button onClick={this.fetchUsers}>Next</button>
+                <div className = {'button-group'}>
+                    <button onClick={this.firstPage}>First</button>
+                    <button onClick={this.nextPage}>Next</button>
+                </div>
             </div>
         );
     }

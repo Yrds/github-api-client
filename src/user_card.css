@@ -1,55 +1,51 @@
-.card {
-    height: 5rem;
-    display: flex;
+.card.user-card .card-content{
+    display:flex;
     flex-direction: column;
-    box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem lightgrey;
-    margin: 1rem;
-    padding: 1rem;
-    border: transparent 0.1rem solid;
-
-    transition: border 0.20s ease-in;
-
-}
-
-.card:hover {
-    border: lightgrey solid 0.1rem;
+    flex-grow: 1;
+    align-items: space-between;
+    padding: 0.5rem;
 }
 
 .user-id {
-    color: lightgrey;
+    color: dimgrey;
     font-weight: bold;
 }
 
 .user-login {
-    font-size: 2rem;
-    color: dimgrey;
+    display: flex;
+    font-size: 1.8rem;
+    color: #24292e ;
 
 }
 
-.detail {
-    align-self: flex-end;
-}
 
 .detail-button {
-    color: dimgrey;
-    background: lightgrey;
-    border: 0.1px solid lightgrey;
-    border-radius: 1rem;
+    color: white;
+    border: none;
+    height:2rem;
+    width: 6rem;
     transition: color 0.1s ease-out;
+    cursor: pointer;
+    background: #2ea44f;
 }
 
-.detail-button:hover{
-    color: white;
+.flex-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 }
+
 
 /*Small Display */
-@media (max-width: 480px){
+@media (max-width: 720px){
+    .flex-group{
+        flex-direction: column;
+    }
     .detail {
-        display: block;
+        margin-top: 1rem;
         width: 100%;
     }
     .detail-button{
-        display:block;
         width:100%;
     }
 }
