@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter} from 'react-router-dom';
 import RepoListItem from './RepoListItem';
 import style from './user_details.css';
+import env from './.env';
 
 class UserDetails extends Component {
 
@@ -24,7 +25,7 @@ class UserDetails extends Component {
     }
 
     fetchDetails(){
-        fetch('http://localhost:3000/users/' + this.props.match.params.userName + '/details')
+        fetch(env.API_URL + '/users/' + this.props.match.params.userName + '/details')
             .then(res => res.json())
             .then(data => {
                 this.setState({
@@ -35,7 +36,7 @@ class UserDetails extends Component {
     }
 
     fetchRepositories(){
-        fetch('http://localhost:3000/users/' + this.props.match.params.userName + '/repos')
+        fetch(env.API_URL + '/users/' + this.props.match.params.userName + '/repos')
             .then(res => res.json())
             .then(data => {
                 this.setState({

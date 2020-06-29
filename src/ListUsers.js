@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserCard from './UserCard';
+import env from './.env';
 
 class ListUsers extends Component {
 
@@ -31,7 +32,7 @@ class ListUsers extends Component {
     }
 
     fetchUsers(page = 0){
-        fetch('http://localhost:3000/users' + (page ? "?since=" + page : '' ))
+        fetch(env.API_URL + '/users' + (page ? "?since=" + page : '' ))
             .then(res => res.json())
             .then(data => {
                 this.setState(
