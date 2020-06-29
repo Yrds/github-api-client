@@ -32,6 +32,7 @@ class ListUsers extends Component {
     }
 
     fetchUsers(page = 0){
+        console.log('env', env)
         fetch(env.API_URL + '/users' + (page ? "?since=" + page : '' ))
             .then(res => res.json())
             .then(data => {
